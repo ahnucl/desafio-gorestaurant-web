@@ -55,6 +55,7 @@ const Dashboard: React.FC = () => {
     food: Omit<IFoodPlate, 'id' | 'available'>,
   ): Promise<void> {
     await api.put(`/foods/${editingFood.id}`, food);
+    // Estou achando estranho não precisar remover a food do estado
   }
 
   async function handleDeleteFood(id: number): Promise<void> {
