@@ -25,12 +25,20 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png"
     },
     {
-      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=653&q=80",
-      "name": "TESTE",
-      "price": "123123",
-      "description": "casdasda",
-      "avaiable": true,
-      "id": 4
+      "image": "https://conteudo.imguol.com.br/c/entretenimento/56/2020/07/09/pizza-de-marguerita-de-liquidificador-1594309727116_v2_450x337.jpg",
+      "name": "Pizza MArgerita",
+      "price": "20",
+      "description": "Huuuum, orégano e manjericão!",
+      "available": true,
+      "id": 5
+    },
+    {
+      "image": "https://www.socialbauru.com.br/wp-content/uploads/2019/04/pizzadem.jpg",
+      "name": "Pizza Calabresa",
+      "price": "35",
+      "description": "Deliciosa pizza",
+      "available": true,
+      "id": 6
     }
   ]
 }

@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
     try {
       const response = await api.post(
         '/foods',
-        Object.assign(food, { avaiable: true }),
+        Object.assign(food, { available: true }),
       );
 
       setFoods([...foods, response.data]);
@@ -54,12 +54,27 @@ const Dashboard: React.FC = () => {
   async function handleUpdateFood(
     food: Omit<IFoodPlate, 'id' | 'available'>,
   ): Promise<void> {
-    await api.put(`/foods/${editingFood.id}`, food);
-    // Estou achando estranho não precisar remover a food do estado
+    const updatedFood = { ...editingFood, ...food };
+
+    await api.put(`/foods/${editingFood.id}`, updatedFood);
+
+    const findIndex = foods.findIndex(
+      findFood => findFood.id === updatedFood.id,
+    );
+
+    setFoods([
+      ...foods.slice(0, findIndex),
+      updatedFood,
+      ...foods.slice(findIndex + 1),
+    ]);
   }
 
   async function handleDeleteFood(id: number): Promise<void> {
-    // TODO DELETE A FOOD PLATE FROM THE API
+    await api.delete(`/foods/${id}`);
+
+    const updatedFoods = foods.filter(food => food.id !== id);
+
+    setFoods(updatedFoods);
   }
 
   function toggleModal(): void {
